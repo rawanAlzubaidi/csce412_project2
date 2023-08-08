@@ -1,0 +1,21 @@
+\doxysection{Load\+Balancer.\+h File Reference}
+\hypertarget{_load_balancer_8h}{}\label{_load_balancer_8h}\index{LoadBalancer.h@{LoadBalancer.h}}
+
+
+The \doxylink{class_load_balancer}{Load\+Balancer} class represents a simple load balancer for web servers.  
+
+
+{\ttfamily \#include \"{}Web\+Server.\+h\"{}}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_load_balancer}{Load\+Balancer}}
+\begin{DoxyCompactList}\small\item\em Manages a collection of \doxylink{class_web_server}{Web\+Server} objects to balance the load of incoming requests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_load_balancer}{Load\+Balancer} class represents a simple load balancer for web servers. 
+
+This class manages a collection of \doxylink{class_web_server}{Web\+Server} objects and distributes incoming requests among them to balance the load. It maintains a request queue and assigns requests to available servers. The \doxylink{class_load_balancer}{Load\+Balancer} class is responsible for handling incoming requests and distributing them to the available \doxylink{class_web_server}{Web\+Server} instances. 

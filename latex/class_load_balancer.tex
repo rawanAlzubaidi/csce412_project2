@@ -1,0 +1,122 @@
+\doxysection{Load\+Balancer Class Reference}
+\hypertarget{class_load_balancer}{}\label{class_load_balancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Manages a collection of \doxylink{class_web_server}{Web\+Server} objects to balance the load of incoming requests.  
+
+
+
+
+{\ttfamily \#include $<$Load\+Balancer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_load_balancer_abaeec0438707e7690972a0b556168e62}{Load\+Balancer}} (int Server\+Number)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_load_balancer}{Load\+Balancer} object with a given number of web servers. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_a69951a7bb77be7fafd4d5ad6919abd80}\label{class_load_balancer_a69951a7bb77be7fafd4d5ad6919abd80} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Load\+Balancer} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_load_balancer}{Load\+Balancer} object and clean up the web server instances. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_aa1a1a412413ecb6ad8d97cf568589cf8}{Add\+Request}} (const \mbox{\hyperlink{struct_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em Add a request to the load balancer\textquotesingle{}s queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_af864b36fb79f4837565b760fe582107d}{Balance}} (int runtime)
+\begin{DoxyCompactList}\small\item\em Balance the incoming requests among the web servers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_a774471a9abcd2ed4671e97580221cdf2}{log\+Message}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message related to the load balancer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a collection of \doxylink{class_web_server}{Web\+Server} objects to balance the load of incoming requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_load_balancer_abaeec0438707e7690972a0b556168e62}\label{class_load_balancer_abaeec0438707e7690972a0b556168e62} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{int}]{Server\+Number }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_load_balancer}{Load\+Balancer} object with a given number of web servers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Server\+Number} & The number of web servers to create and manage. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_load_balancer_aa1a1a412413ecb6ad8d97cf568589cf8}\label{class_load_balancer_aa1a1a412413ecb6ad8d97cf568589cf8} 
+\index{LoadBalancer@{LoadBalancer}!AddRequest@{AddRequest}}
+\index{AddRequest@{AddRequest}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{AddRequest()}{AddRequest()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::\+Add\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_request}{Request}} \&}]{request }\end{DoxyParamCaption})}
+
+
+
+Add a request to the load balancer\textquotesingle{}s queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be added to the queue.\\
+\hline
+\end{DoxyParams}
+
+
+This function adds an incoming request to the queue for processing by the load balancer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be added to the queue. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_load_balancer_af864b36fb79f4837565b760fe582107d}\label{class_load_balancer_af864b36fb79f4837565b760fe582107d} 
+\index{LoadBalancer@{LoadBalancer}!Balance@{Balance}}
+\index{Balance@{Balance}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{Balance()}{Balance()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::\+Balance (\begin{DoxyParamCaption}\item[{int}]{run\+Time }\end{DoxyParamCaption})}
+
+
+
+Balance the incoming requests among the web servers. 
+
+This function distributes the incoming requests among the available web servers in a round-\/robin fashion, attempting to balance the load among them. It runs for a given time or until the request queue is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em runtime} & The time duration for which the load balancing should run.\\
+\hline
+\end{DoxyParams}
+
+
+This function distributes the incoming requests among the available web servers in a round-\/robin fashion, attempting to balance the load among them. It runs for a given time or until the request queue is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em run\+Time} & The time duration for which the load balancing should run. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_load_balancer_a774471a9abcd2ed4671e97580221cdf2}\label{class_load_balancer_a774471a9abcd2ed4671e97580221cdf2} 
+\index{LoadBalancer@{LoadBalancer}!logMessage@{logMessage}}
+\index{logMessage@{logMessage}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{logMessage()}{logMessage()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::log\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Log a message related to the load balancer. 
+
+This function logs a message related to the load balancer\textquotesingle{}s operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be logged. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_load_balancer_8h}{Load\+Balancer.\+h}}\item 
+\mbox{\hyperlink{_load_balancer_8cpp}{Load\+Balancer.\+cpp}}\end{DoxyCompactItemize}
